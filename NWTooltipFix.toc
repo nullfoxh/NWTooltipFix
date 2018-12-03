@@ -1,0 +1,7 @@
+## Interface: 20400
+## Title: |cffa0f6aaNWTooltipFix|r
+## Notes: Shows pre-2.3 Spell and item values on tooltips. REMOVE ON PATCH 2.3!
+## Author: null
+## Version: 0.1
+
+NWTooltipFix.lua

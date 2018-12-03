@@ -13,6 +13,7 @@
 	local _G, pairs, tonumber
 		= _G, pairs, tonumber
 
+	local find = string.find
 	local gsub = string.gsub
 	local match = string.match
 	local format = string.format
@@ -43,18 +44,66 @@
 		[29532] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of Panic
 	}
 
-	local function ReplaceHealing(obj, text)
-		local healing = match(text, "Increases healing done by up to (%d+) and damage done")
+	-- not yet needed, commented out for now
+	local SpellSubData = { 
+		-- For instance: Persuasion by Lady Vashj
+		-- [38511] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
+	}
+
+	-- We can't get ID's for auras, so we need to use aura name
+	local AuraSubData = {
+		-- Persuasion by Lady Vashj
+		["Persuasion"] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
+	}
+
+
+	local function ReplaceHealing(obj)
+		local healing = match(obj:GetText(), "Increases healing done by up to (%d+) and damage done")
 		if healing then
 			obj:SetText(format("Equip: Increases healing done by spells and effects by up to %s.", healing))
 		end
 	end
 
-	local function ReplaceOther(obj, text, subdata)
+	local function ReplaceOther(obj, subdata)
 		for k, v in pairs(subdata) do
-			local str, count = gsub(text, v[1], v[2])
+			local str, count = gsub(obj:GetText(), v[1], v[2])
 			if count > 0 then
 				obj:SetText(str)
+			end
+		end
+	end
+
+	local function OnTipSetSpell(tip, tipname)
+		if IsControlKeyDown() then return end
+
+		local subdata
+		local name, rank = tip:GetSpell()
+		local id = GetSpellLink(name, rank)
+		id = id and tonumber(id:match("spell:(%d+)"))
+
+		if id then
+			subdata = SpellSubData[id]
+		end
+
+		if subdata then
+			for i = 1, tip:NumLines() do
+				local obj = _G[format("%sTextLeft%s", tipname, i)]
+				if subdata then
+					ReplaceOther(obj, subdata)
+				end
+			end
+		end
+	end
+
+	local function OnTipSetAura(self, ...)
+		if IsControlKeyDown() then return end
+
+		local title = GameTooltipTextLeft1:GetText()
+		local subdata = AuraSubData[title]
+		if subdata then
+			for i = 1, GameTooltip:NumLines() do
+				local obj = _G[format("GameTooltipTextLeft%s", i)]
+				ReplaceOther(obj, subdata)
 			end
 		end
 	end
@@ -72,11 +121,18 @@
 		
 		for i = 1, tip:NumLines() do
 			local obj = _G[format("%sTextLeft%s", name, i)]
-			local text = obj:GetText()
-			ReplaceHealing(obj, text)
+			ReplaceHealing(obj)
 			if subdata then
-				ReplaceOther(obj, text, subdata)
+				ReplaceOther(obj, subdata)
 			end
+		end
+	end
+
+	local function OnSetItemRefTip(link)
+		if find(link, "^spell:")then
+			--OnTipSetSpell(ItemRefTooltip, "ItemRefTooltip")
+		else
+			OnTipSetItem(ItemRefTooltip, "ItemRefTooltip")
 		end
 	end
 
@@ -85,7 +141,13 @@
 		t:HookScript("OnTooltipSetItem", function(self) OnTipSetItem(self, self:GetName()) end)
 	end
 
-	hooksecurefunc("SetItemRef", function() OnTipSetItem(ItemRefTooltip, "ItemRefTooltip") end)
+	--GameTooltip:SetScript("OnTooltipSetSpell", function(self) OnTipSetSpell(GameTooltip, "GameTooltip") end)
+
+	hooksecurefunc("SetItemRef", OnSetItemRefTip)
+
+	hooksecurefunc(GameTooltip, "SetUnitBuff", OnTipSetAura)
+	hooksecurefunc(GameTooltip, "SetUnitDebuff", OnTipSetAura)
+	hooksecurefunc(GameTooltip, "SetPlayerBuff", OnTipSetAura)
 
 	if AtlasLootTooltip then
 		AtlasLootTooltip:HookScript2("OnShow", function(self) OnTipSetItem(self, self:GetName()) end)

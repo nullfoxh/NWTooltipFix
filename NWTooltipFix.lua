@@ -27,9 +27,7 @@
 	local ItemSubData = {
 		[29713] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Panic (Keepers of Time)
 		[29714] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration
-		[29715] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration (Kurenai)
 
-		[29718] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration
 		[29717] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Battle (Sha'tar)
 		[29718] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Speed
 

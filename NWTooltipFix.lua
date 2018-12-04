@@ -26,22 +26,22 @@
 	}
 
 	local ItemSubData = {
-		[29713] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Panic (Keepers of Time)
-		[29714] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration
+		[29713] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Panic (Keepers of Time)
+		[29714] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Restoration
 
-		[29717] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Battle (Sha'tar)
-		[29718] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Speed
+		[29717] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Battle (Sha'tar)
+		[29718] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Speed
 
-		[34172] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Speed (Mag'har)
-		[34173] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Speed (Kurenai)
-		[34174] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration (Mag'har)
-		[34175] = { { " Drums can be used while shapeshifted.", "" }, }, -- Pattern: Drums of Restoration (Kurenai)
+		[34172] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Speed (Mag'har)
+		[34173] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Speed (Kurenai)
+		[34174] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Restoration (Mag'har)
+		[34175] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Pattern: Drums of Restoration (Kurenai)
 
-		[29528] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of War
-		[29529] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of Battle
-		[29530] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of Speed
-		[29531] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of Restoration
-		[29532] = { { " Drums can be used while shapeshifted.", "" }, }, -- Drums of Panic
+		[29528] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Drums of War
+		[29529] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Drums of Battle
+		[29530] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Drums of Speed
+		[29531] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Drums of Restoration
+		[29532] = { { " Drums can be used while shapeshifted.", "\n|cffffffff1 sec cast|r" }, }, -- Drums of Panic
 	}
 
 	-- not yet needed, commented out for now

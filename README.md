@@ -11,7 +11,7 @@ An example of these changes would be Leatherworking Drums not being usable while
 
 ## How to install
 
-Click the green 'Clone or download' button and select 'Download ZIP'. Extract the folder and rename it to NWTooltipFix (remove the '-master' part.) Copy to your World of Warcraft/Interface/AddOns folder and you're done!
+Go to Releases in https://github.com/nullfoxh/NWTooltipFix/releases and download NWTooltipFix.zip. Extract it to your World of Warcraft/Interface/AddOns folder and you're done!
 
 
 ### Remember to remove this addon on patch 2.3!

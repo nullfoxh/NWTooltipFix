@@ -56,17 +56,26 @@
 		["Persuasion"] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
 	}
 
+	local HealSubData = {
+		["Increases healing done by up to (%d+) and damage done"] = "Equip: Increases healing done by spells and effects by up to %s.",
+		["+(%d+) Healing Spells and"] = "|cffffffff+%s Healing Spells|r",
+	}
+
 
 	local function ReplaceHealing(obj)
-		local healing = match(obj:GetText(), "Increases healing done by up to (%d+) and damage done")
-		if healing then
-			obj:SetText(format("Equip: Increases healing done by spells and effects by up to %s.", healing))
+		local text = obj:GetText()
+		for k, v in pairs(HealSubData) do
+			local healing = match(text, k)
+			if healing then
+				obj:SetText(format(v, healing))
+			end
 		end
 	end
 
 	local function ReplaceOther(obj, subdata)
+		local text = obj:GetText()
 		for k, v in pairs(subdata) do
-			local str, count = gsub(obj:GetText(), v[1], v[2])
+			local str, count = gsub(text, v[1], v[2])
 			if count > 0 then
 				obj:SetText(str)
 			end

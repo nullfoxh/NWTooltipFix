@@ -1,6 +1,7 @@
 # NWTooltipFix
 
-#### For use on Atlantiss, Netherwing.
+#### For use on Atlantiss, Netherwing. Remember to remove this addon on patch 2.3!
+![Screenshot](NWTooltipFix.png)
 
 ## What does it do
 
@@ -18,4 +19,6 @@ The following will be fixed:
 
 Go to Releases in https://github.com/nullfoxh/NWTooltipFix/releases and download NWTooltipFix.zip. Extract it to your World of Warcraft/Interface/AddOns folder and you're done!
 
-### Remember to remove this addon on patch 2.3!
+## Latest Changes - Version 1.3
+
+* Fixed display of certain green items with the type 'of healing'

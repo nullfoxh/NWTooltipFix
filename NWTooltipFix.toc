@@ -2,6 +2,6 @@
 ## Title: |cffa0f6aaNWTooltipFix|r
 ## Notes: Shows pre-2.3 Spell and item values on tooltips. REMOVE ON PATCH 2.3!
 ## Author: null
-## Version: 1.2
+## Version: 1.3
 
 NWTooltipFix.lua

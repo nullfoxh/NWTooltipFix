@@ -50,14 +50,15 @@
 		-- [38511] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
 	}
 
-	-- We can't get ID's for auras, so we need to use aura name
+	-- We can't get IDs for auras, so we need to use aura name
 	local AuraSubData = {
 		-- Persuasion by Lady Vashj
 		["Persuasion"] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
 	}
 
 	local HealSubData = {
-		["Increases healing done by up to (%d+) and damage done"] = "Equip: Increases healing done by spells and effects by up to %s.",
+		["Equip: Increases healing done by up to (%d+) and damage done"] = "Equip: Increases healing done by spells and effects by up to %s.",
+		["Use: Increases healing done by up to (%d+) and damage done"] = "Use: Increases healing done by spells and effects by up to %s.",
 		["+(%d+) Healing Spells and"] = "|cffffffff+%s Healing Spells|r",
 	}
 

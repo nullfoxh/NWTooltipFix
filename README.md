@@ -1,6 +1,7 @@
 # NWTooltipFix
 
 #### For use on Atlantiss, Netherwing. Remember to remove this addon on patch 2.3!
+#### Please note that gems and enchants are supposed to grant both healing and damage bonuses!
 ![Screenshot](NWTooltipFix.png)
 
 ## What does it do

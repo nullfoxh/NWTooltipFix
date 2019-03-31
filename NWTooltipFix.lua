@@ -53,7 +53,8 @@
 	-- We can't get IDs for auras, so we need to use aura name
 	local AuraSubData = {
 		-- Persuasion by Lady Vashj
-		["Persuasion"] = { { "$s1.", "200" },  { "$s2.", "1000" }, }, 
+		["Persuasion"] = { { "$s1.", "200" },  { "$s2.", "1000" }, },
+		["Scalding Water"] = { { "500", "1000" },  { "3 sec.", "2 sec." }, }, 
 	}
 
 	local HealSubData = {

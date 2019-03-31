@@ -20,6 +20,6 @@ The following will be fixed:
 
 Go to Releases in https://github.com/nullfoxh/NWTooltipFix/releases and download NWTooltipFix.zip. Extract it to your World of Warcraft/Interface/AddOns folder and you're done!
 
-## Latest Changes - Version 1.4
+## Latest Changes - Version 1.5
 
-* Fixed display of On-Use healing bonuses (trinkets and such)
+* Fixed display of Scalding Water's damage over time
